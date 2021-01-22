@@ -37,4 +37,4 @@ findRadius houses heaters = maximum (map heaterDist houses)
                 if heaterIndex == length heaters
                     then leftDistFn
                 else
-                    minimum [leftDistFn, rightDistFn]
+                    min leftDistFn rightDistFn

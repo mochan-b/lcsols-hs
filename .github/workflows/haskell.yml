@@ -2,7 +2,7 @@ on: [push]
 name: build
 jobs:
   runhaskell:
-    name: Haskell Stack test
+    name: Haskell stack test
     runs-on: ubuntu-latest # or macOS-latest, or windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -10,7 +10,7 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         with:
-          ghc-version: 'latest' # Exact version of ghc to use
+          ghc-version: 'latest'
           # cabal-version: 'latest'. Omitted, but defalts to 'latest'
           enable-stack: true
           stack-version: 'latest'
