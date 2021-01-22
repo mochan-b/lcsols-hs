@@ -29,12 +29,12 @@ findRadius houses heaters = maximum (map heaterDist houses)
         heaterDist house = do            
             let sortedHeaters = Data.List.sort heaters
             let heaterIndex = findHeater house sortedHeaters
-            let leftDistFn = \() -> house - sortedHeaters!!(heaterIndex - 1)
-            let rightDistFn = \() -> sortedHeaters!!heaterIndex - house
+            let leftDistFn = house - sortedHeaters!!(heaterIndex - 1)
+            let rightDistFn = sortedHeaters!!heaterIndex - house
             if heaterIndex == 0
-                then rightDistFn()
+                then rightDistFn
             else
                 if heaterIndex == length heaters
-                    then leftDistFn()
+                    then leftDistFn
                 else
-                    minimum [leftDistFn(), rightDistFn()]
+                    minimum [leftDistFn, rightDistFn]
