@@ -2,11 +2,13 @@ on: [push]
 name: build
 jobs:
   runhaskell:
-    name: Hello World
+    name: Haskell Stack test
     runs-on: ubuntu-latest # or macOS-latest, or windows-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-haskell@v1.1
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         with:
           ghc-version: '8.8.3' # Exact version of ghc to use
           # cabal-version: 'latest'. Omitted, but defalts to 'latest'
