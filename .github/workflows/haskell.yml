@@ -14,6 +14,4 @@ jobs:
           # cabal-version: 'latest'. Omitted, but defalts to 'latest'
           enable-stack: true
           stack-version: 'latest'
-      - run: 
-          stack init
-          stack test
+      - run: stack test
