@@ -15,5 +15,5 @@ jobs:
           enable-stack: true
           stack-version: 'latest'
       - run: 
-        stack init
-        stack test
+          stack init
+          stack test
